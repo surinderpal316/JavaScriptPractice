@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | BMI </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="set">
+    <h1 class="head">BMI Calculator</h1>
+    <form id="bmiForm" onsubmit="calculateBMI(event)"> <!-- Added onsubmit event handler -->
+        <p><label>height in Centimeter:</label> <input type="text" id="height"/></p>
+        <p><label>Weight in KG:</label> <input type="text" id="weight"/></p>
+        <input type="submit" value="Calculate"> <!-- Changed button to input type="submit" -->
+        <div id="result"></div>
+        <div id="weight-guide">
+            <h3>Weight Guide</h3>
+            <p>Under Weight less than 18.6</p>
+            <p>Normal Range = 18.6 To 24.6</p>
+            <p>Overweight = Greater than 24.6</p>
+            <div id="mess"></div>
+        </div>
+    </form>
+ </div>
+ <script>
+    function calculateBMI(event) {
+        event.preventDefault();
+        const height = parseInt(document.querySelector('#height').value);
+        const weight = parseInt(document.querySelector('#weight').value);
+        const results = document.querySelector('#result');
+        const mess = document.querySelector('#mess');
+
+        if (height === '' || height < 0 || isNaN(height)) {
+            results.innerHTML = `Please give valid height ${height}`;
+        } else if (weight === '' || weight < 0 || isNaN(weight)) {
+            results.innerHTML = `Please give valid height ${weight}`;
+        } else {
+            const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+            results.innerHTML = `<span>${bmi}</span>`;
+
+            if (bmi <= 18) {
+                mess.innerHTML = "Underweight";
+            } else if (bmi >= 18.6 && bmi <= 24) {
+                mess.innerHTML = "Normal Weight";
+            } else if (bmi > 24) {
+                mess.innerHTML = "Overweight";
+            }
+        }
+    }
+ </script>
+</body>
+</html>

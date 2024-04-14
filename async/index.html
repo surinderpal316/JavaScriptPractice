@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+
+    <div>
+        <h1>Chai aur Code</h1>
+        <button id="start" onclick="">start</button>
+        <button id="stop" onclick="">stop</button>
+    </div>
+
+</body>
+<script>
+
+
+let count =1;
+
+//setInterval(() => {
+  //  console.log('hi mamta')   
+  
+    //console.log(`${count+=count}`)
+ 
+//}, 1000);
+
+//setTimeout(() => {
+ //   let count =1;
+   // console.log(`${count++}`)
+
+//}, 2000);
+
+const changeText = function (){
+    document.querySelector('h1').innerHTML= "best in Js";
+}
+
+const changeMe = setTimeout(changeText,2000)
+
+const stop = document.querySelector('#stop')
+.addEventListener('click',function(){
+    clearTimeout(changeMe);
+    console.log('STOPPED')
+})
+
+const day = function (){
+    console.log(`${count+=count}`);
+}
+
+//const inter = setInterval(day, 1000)
+//clearInterval(inter)
+
+const start = document.querySelector('#start')
+//clearTimeout(changeMe,3000)
+ 
+
+
+</script>
+</html>

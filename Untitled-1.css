@@ -1,0 +1,12 @@
+.cen{
+    display:flex;   
+}
+body{
+    background-color: black;
+    color:#fff;
+}
+.set{
+    display: flex;
+    justify-content:center;
+    text-align: center;
+}

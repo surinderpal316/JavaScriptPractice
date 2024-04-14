@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async| Color Changer</title>
+</head>
+<body>
+    <h1>Color Chgnager</h1>
+    <button id ="start">start</button>
+    <button id ="stop">STOPPED</button>
+    
+</body>
+<script>
+const body = document.querySelector('body');
+const start= document.querySelector('#start')
+const cl= document.querySelector('#stop')
+const randomColor = function () {
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for(let i =0; i<6; i++){
+        color +=hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+};
+let intervalId;
+
+const startChangingColor = function () {
+    if(!intervalId){
+        setInterval(changeBgColor,2000)
+    }
+
+    function changeBgColor() {
+        body.style.backgroundColor = randomColor();
+    }
+
+}
+const stopChangingColor =  function (){
+    clearInterval(intervalId)
+    intervalId = null;
+}
+cl.addEventListener('click',stopChangingColor)
+
+start.addEventListener ('click', startChangingColor)
+
+
+
+
+
+</script>
+</html>

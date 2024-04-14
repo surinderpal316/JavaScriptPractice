@@ -1,0 +1,41 @@
+span {
+    padding: 50px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    border:2px solid #212121;
+}
+.cen {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+   
+}
+.decen{
+ 
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#white {
+    background-color: aliceblue;
+}
+
+#grey{
+    background-color: grey;
+   
+}
+#blue {
+    background-color: blue;
+   
+}
+#yellow{
+    background:yellow;
+  
+}
+#pink {
+    background:pink;
+
+}
